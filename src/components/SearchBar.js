@@ -17,14 +17,8 @@ const Input = styled.input`
 `
 
 class SearchBar extends React.Component {
-
-    constructor() {
-        super();
-        this.state = { input: '' }
-    }
-
+   
     onChange = (input) => {
-        this.setState({input});
         this.props.onTermChange(input);
     }
 

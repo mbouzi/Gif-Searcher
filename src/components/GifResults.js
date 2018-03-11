@@ -6,8 +6,8 @@ const Div = styled.div`
 	display: inline
 `
 
-const GifList = (props) => {
-  
+const GifResults = (props) => {
+  console.log("PROPS:", props);
   const gifs = props.gifs.map((gif) => {
     return (<Div>
 	    		<GifCard 
@@ -23,4 +23,4 @@ const GifList = (props) => {
   );
 };
 
-export default GifList;
+export default GifResults;

@@ -6,9 +6,9 @@ const Image = styled.img`
     margin: 10px;
 `
 
-const GifCard = (item) => {
+const GifCard = ({gif}) => {
   return (
-    <Image src={item.gif.images.downsized.url} />
+    <Image src={gif.images.downsized.url} />
   )
 };
 
