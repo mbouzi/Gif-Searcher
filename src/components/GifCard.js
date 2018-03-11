@@ -1,10 +1,11 @@
 import React from 'react';
 
-const GifCard = (gifImage) => {
+const GifCard = (item) => {
+	console.log("GIF:", item.gif)
   return (
-    <li>
-      <img src={gifImage} />
-    </li>
+    <div>
+      <img src={item.gif.images.downsized.url} />
+    </div>
   )
 };
 

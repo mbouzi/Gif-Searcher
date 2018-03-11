@@ -3,8 +3,13 @@ import GifCard from './GifCard';
 
 const GifList = (props) => {
   
-  const gifs = props.gifs.map((gif, index) => {
-    return <GifCard key={index} gif={gif} />
+  const gifs = props.gifs.map((gif) => {
+    return (
+	    		<GifCard 
+	    			key={gif.id} 
+	    			gif={gif} 
+	    		/>
+    		)
   });
 
   return (

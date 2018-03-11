@@ -8,7 +8,6 @@ class SearchBar extends React.Component {
     }
 
     onChange = (input) => {
-        console.log("EVENT:", input)
         this.setState({input});
         this.props.onTermChange(input);
     }

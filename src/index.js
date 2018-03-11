@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/SearchBar'
 import GifList from './components/GifList'
 
+import axios from 'axios'
+
 class Searcher extends React.Component {
 
   constructor(props) {
@@ -15,7 +17,16 @@ class Searcher extends React.Component {
   }
 
   handleTermChange = (term) => {
-    this.setState({term: term});
+    // this.setState({term: term});
+    const url = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv`;
+    axios.get(url)
+	  .then((response) => {
+	  	console.log("RESPONSE1:", response.data.data)
+	    this.setState({ gifs: response.data.data })
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	  });
   }
 
   render() {
