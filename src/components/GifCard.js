@@ -1,11 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Image = styled.img`
+	max-height: 200px;
+    margin: 10px;
+`
 
 const GifCard = (item) => {
-	console.log("GIF:", item.gif)
   return (
-    <div>
-      <img src={item.gif.images.downsized.url} />
-    </div>
+    <Image src={item.gif.images.downsized.url} />
   )
 };
 
