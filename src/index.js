@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import SearchBar from './components/SearchBar'
+import GifList from './components/GifList'
+
 class Searcher extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {name: 'Search'};
+    
+    this.state = {
+    	gifs: []
+    };
   }
-  handleChange(e) {
-    this.setState({name: e.target.value});
+  handleChange = (event) => {
+    this.setState({name: event.target.value});
   }
   render() {
     return (
       <div>
         <h1>Gif Searcher</h1>
-        <input 
-        	placeholder="Search Gif" 
-        	onChange={this.handleChange} 
-        	defaultValue={this.state.name}
+        <SearchBar 
+        	onTermChange={this.handleChange}
         />
       </div>
     );
