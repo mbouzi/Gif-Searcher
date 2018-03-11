@@ -8,4 +8,4 @@ const GifCard = (gifImage) => {
   )
 };
 
-export default GifItem;
+export default GifCard;
