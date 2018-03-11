@@ -1,0 +1,13 @@
+{
+  "name": "gif-searcher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mbouzi/Gif-Searcher.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.1.1"
+  }
+}
