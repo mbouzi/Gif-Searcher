@@ -6,7 +6,14 @@ import SearchBar from '../components/SearchBar';
 import GifResults from '../components/GifResults'
 
 class Home extends React.Component {
+
+  componentWillMount() {
+    this.props.actions.requestTrendingGifs();
+  }
+
   render() {
+
+
     return (
       <div>
         <SearchBar onTermChange={this.props.actions.requestGifs} />
