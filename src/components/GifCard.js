@@ -6,9 +6,12 @@ const Image = styled.img`
     margin: 10px;
 `
 
+const onImageClick = () => this.props.onGifClick
+
+
 const GifCard = ({gif}) => {
   return (
-    <Image src={gif.images.downsized.url} />
+    <Image onClick={this.onImageClick} src={gif.images.downsized.url} />
   )
 };
 

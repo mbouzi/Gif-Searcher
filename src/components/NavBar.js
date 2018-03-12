@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Header, Segment} from 'semantic-ui-react'
 
+
 class NavBar extends React.Component {
     render() {
         return (
             <Segment>
                 <Header as='h3' textAlign='left'>
-                  Left
+                    <Link to='/'>Home</Link>
+                     <Link to='/random'>Random</Link>
                 </Header>
             </Segment>
         );
