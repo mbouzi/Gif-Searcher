@@ -4,19 +4,19 @@ import { history } from './../store/configureStore';
 
 
 const initialState =  {
-  data: []
+    data: []
 };
 
 export default function gifs(state = initialState, action) {
-  switch (action.type) {
-    case REQUEST_GIFS: 
-    case REQUEST_RANDOM_GIF: 
-    case REQUEST_GIF:
-    case REQUEST_TRENDING_GIFS:
-      return {
-        ...state, data: action.payload.data
-      };
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case REQUEST_GIFS:
+        case REQUEST_TRENDING_GIFS:
+        // case REQUEST_RANDOM_GIF: 
+        // case REQUEST_GIF:
+            return {
+              ...state, data: action.payload.data
+            };
+        default:
+            return state;
+    }
 }

@@ -4,9 +4,9 @@ import TermsReducer from './terms'
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  gifs: GifsReducer,
-  terms: TermsReducer,
-  router: routerReducer
+	gifs: GifsReducer,
+	terms: TermsReducer,
+	router: routerReducer
 });
 
 export default rootReducer;
