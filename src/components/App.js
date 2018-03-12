@@ -16,7 +16,7 @@ const Container = styled.div`
     `
 ;
 
-export default class App extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <ConnectedRouter history={history}>
@@ -33,4 +33,5 @@ export default class App extends React.Component {
     }
 }
 
-//     background-color: #121212;
+
+export default App;

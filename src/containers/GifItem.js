@@ -4,22 +4,25 @@ import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
 import GifCard from '../components/GifResults'
 
-import { history } from '../store/configureStore';
-
 
 class GifItem extends React.Component {
 
   componentWillMount() {
-    this.props.actions.requestRandomGif()
+    if(this.props.location.state && this.props.location.state.gif && this.props.location.state.gif.id) {
+      console.log("ID:", this.props.location.state.gif.id)
+      this.props.actions.requestGif(this.props.location.state.gif.id)
+    } else {
+      this.props.actions.requestRandomGif();
+    }
   }
 
 
   render() {
-  
+    console.log("HIT:")
 
     return (
       <div>
-        <GifCard gifItem={ this.props.gifs} />
+        <GifCard gif={ this.props.gif} />
       </div>
     );
   }
@@ -28,7 +31,7 @@ class GifItem extends React.Component {
 function mapStateToProps(state) {
   console.log("STATE:", state)
   return {
-    gifs: state.gifs.data
+    gif: state.gifs.gif.data
   };
 }
 
@@ -39,4 +42,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapDispatchToProps)(GifItem);
+export default connect(mapDispatchToProps, mapDispatchToProps)(GifItem);

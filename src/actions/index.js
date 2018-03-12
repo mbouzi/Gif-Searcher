@@ -7,6 +7,8 @@ export const REQUEST_TRENDING_GIFS = 'REQUEST_TRENDING_GIFS'
 export const SAVE_TERMS = 'SAVE_TERMS';
 export const DISPLAY_TERM = 'DISPLAY_TERM';
 
+import { history } from './../store/configureStore';
+
 
 export function saveTerms(term = null) {
 	return {
@@ -17,7 +19,6 @@ export function saveTerms(term = null) {
 
 export function displayTerm(term = null) {
 
-	console.log("TERM:", term)
 	return {
 		type: DISPLAY_TERM,
 		payload: term
@@ -40,8 +41,8 @@ export function requestGifs(term = null) {
 
 export function requestRandomGif() {
 
-	const API_URL = 'http://api.giphy.com/v1/gifs/random?';
-	const API_KEY = 'api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
+	const API_URL = 'http://api.giphy.com/v1/gifs/random';
+	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
 
 	const data = axios.get(`${API_URL}${API_KEY}`);
@@ -69,8 +70,11 @@ export function requestGif(id = null) {
 	const API_URL = 'http://api.giphy.com/v1/gifs/';
 	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
+	console.log("ID:", id)
 
 	const data = axios.get(`${API_URL}${id}${API_KEY}`);
+
+	console.log("DATA:", data)
 	return {
 	    type: REQUEST_GIF,
 	    payload: data

@@ -17,7 +17,7 @@ const GifResults = (props) => {
         <Div>
   	    	<GifCard 
   	    		key={gif.id} 
-  	    		gif={gif} 
+  	    		gif={gif}
   	    	/>
   	    </Div>
       	)
