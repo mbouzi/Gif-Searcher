@@ -13,15 +13,19 @@ class Home extends React.Component {
   }
 
   saveTerm = (input) => {
-    console.log("INPUT:", input)
     this.props.actions.saveTerms(input)
+  }
+
+  onTermChange = (input) => {
+    this.props.actions.requestGifs(input)
+    this.props.actions.displayTerm(input)
   }
 
   render() {
 
     return (
       <div>
-        <SearchBar terms={this.props.terms} handleKeyUp={this.saveTerm} onTermChange={this.props.actions.requestGifs} />
+        <SearchBar term={this.props.term} terms={this.props.terms} handleKeyUp={this.saveTerm} onTermChange={this.onTermChange} />
         <GifResults gifs={ this.props.gifs } />
       </div>
     );
@@ -29,10 +33,10 @@ class Home extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("STATE:", state)
   return {
     gifs: state.gifs.data,
-    terms: state.terms
+    terms: state.terms,
+    term: state.terms.term
   };
 }
 

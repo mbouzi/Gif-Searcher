@@ -45,13 +45,10 @@ class SearchBar extends React.Component {
     }
 
 
-
     renderPreviousTerms = () => {
         const terms = this.props.terms.terms;
-        console.log("SEACH TERMS:", terms)
         if(terms && terms.length > 0) {
             return terms.map((term, index) => {
-                console.log("term:", term, index)
                 return (
                     <Term onClick={() => this.onChange(term)} key={index}>{term}</Term>
                 )
@@ -62,7 +59,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="search">
-                <Input placeholder="Search for gifs" onKeyUp={() => this.onKeyUp(event.target.value)}  onChange={() => this.onChange(event.target.value)} />
+                <Input value={this.props.term} placeholder="Search for gifs" onKeyUp={() => this.onKeyUp(event.target.value)}  onChange={() => this.onChange(event.target.value)} />
                 <Results>
                     <List>
                         {this.renderPreviousTerms()}

@@ -5,12 +5,21 @@ export const REQUEST_RANDOM_GIF = 'REQUEST_RANDOM_GIF';
 export const REQUEST_GIF = 'REQUEST_GIF';
 export const REQUEST_TRENDING_GIFS = 'REQUEST_TRENDING_GIFS'
 export const SAVE_TERMS = 'SAVE_TERMS';
+export const DISPLAY_TERM = 'DISPLAY_TERM';
 
 
 export function saveTerms(term = null) {
-	console.log("SAVE TERMS:", term)
 	return {
 		type: SAVE_TERMS,
+		payload: term
+	}
+}
+
+export function displayTerm(term = null) {
+
+	console.log("TERM:", term)
+	return {
+		type: DISPLAY_TERM,
 		payload: term
 	}
 }
@@ -36,7 +45,6 @@ export function requestRandomGif() {
 
 
 	const data = axios.get(`${API_URL}${API_KEY}`);
-	console.log("FUNTIONaDATA:", data)
 	return {
 	    type: REQUEST_RANDOM_GIF,
 	    payload: data
@@ -50,7 +58,6 @@ export function requestTrendingGifs() {
 
 
 	const data = axios.get(`${API_URL}${API_KEY}`);
-	console.log("TREDNING DATA:", data)
 	return {
 	    type: REQUEST_TRENDING_GIFS,
 	    payload: data
@@ -64,7 +71,6 @@ export function requestGif(id = null) {
 
 
 	const data = axios.get(`${API_URL}${id}${API_KEY}`);
-	console.log("FUNTIONaDATA:", data)
 	return {
 	    type: REQUEST_GIF,
 	    payload: data
