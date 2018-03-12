@@ -14,10 +14,11 @@ const Image = styled.img`
 
 const GifCard = (props) => {
 
+	console.log("PROPS GIF:", props)
 	return (
 	 <Link to={{
-	   pathname: `/gif/${props.gif.id}`,
-	   state: { gif: props.gif }
+	   		pathname: `/gif/${props.gif.id}`,
+	   		state: { gif: props.gif }
 	  }}>
 	   <Image src={props.gif.images.downsized.url} />
 	  </Link>

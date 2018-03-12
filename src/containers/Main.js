@@ -5,7 +5,7 @@ import * as Actions from '../actions';
 import SearchBar from '../components/SearchBar';
 import GifResults from '../components/GifResults'
 
-class Home extends React.Component {
+class Main extends React.Component {
 
 
   componentWillMount() {
@@ -46,4 +46,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

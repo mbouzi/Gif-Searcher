@@ -3,9 +3,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router-dom';
 import { history } from './../store/configureStore';
 
-import Home from '../containers/Home';
+import Main from '../containers/Main';
 import NavBar from '../components/NavBar'
-import GifItem from '../containers/GifItem'
+import GifContainer from '../containers/GifContainer'
 
 import styled from 'styled-components';
 
@@ -23,9 +23,9 @@ class App extends React.Component {
                 <div>
                     <NavBar />
                     <Container>
-                        <Route exact path="/" component={ Home }/>
-                        <Route exact path="/random" component={ GifItem }/>
-                        <Route exact path="/gif/:gifId" component={ GifItem }/>
+                        <Route exact path="/" component={ Main }/>
+                         <Route exact path="/random" component={ GifContainer }/>
+                        <Route exact path="/gif/:gifId" component={GifContainer} />
                     </Container>
                 </div>
             </ConnectedRouter>

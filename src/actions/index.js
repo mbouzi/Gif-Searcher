@@ -52,33 +52,33 @@ export function requestTrendingGifs() {
 	}
 }
 
-// export function requestRandomGif() {
+export function requestRandomGif() {
 
-// 	const API_URL = 'http://api.giphy.com/v1/gifs/random';
-// 	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
-
-
-// 	const data = axios.get(`${API_URL}${API_KEY}`);
-// 	return {
-// 	    type: REQUEST_RANDOM_GIF,
-// 	    payload: data
-// 	}
-// }
+	const API_URL = 'http://api.giphy.com/v1/gifs/random';
+	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
 
+	const data = axios.get(`${API_URL}${API_KEY}`);
+	return {
+	    type: REQUEST_RANDOM_GIF,
+	    payload: data
+	}
+}
 
-// export function requestGif(id = null) {
 
-// 	const API_URL = 'http://api.giphy.com/v1/gifs/';
-// 	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
-// 	console.log("ID:", id)
+export function requestGif(id = null) {
 
-// 	const data = axios.get(`${API_URL}${id}${API_KEY}`);
+	const API_URL = 'http://api.giphy.com/v1/gifs/';
+	const API_KEY = '?api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
-// 	console.log("DATA:", data)
-// 	return {
-// 	    type: REQUEST_GIF,
-// 	    payload: data
-// 	}
-// }
+	console.log("ID:", id)
+
+	const data = axios.get(`${API_URL}${id}${API_KEY}`);
+
+	console.log("DATA:", data)
+	return {
+	    type: REQUEST_GIF,
+	    payload: data
+	}
+}
