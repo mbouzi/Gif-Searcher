@@ -8,19 +8,18 @@ const Input = styled.input`
     border-radius: 0;
     font-weight: 400;
     width: 70%;
-    border: 1px solid;
     margin: 0;
     height: 52px;
     letter-spacing: 1px;
     font-size: 18px;
-    outline: none
+    outline: none;
+    border: none;
 `
 
 class SearchBar extends React.Component {
    
     onChange = (input) => {
         this.props.onTermChange(input);
-    
     }
 
     onKeyUp = (input) => {
