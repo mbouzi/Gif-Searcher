@@ -7,16 +7,21 @@ import GifResults from '../components/GifResults'
 
 class Home extends React.Component {
 
+
   componentWillMount() {
     this.props.actions.requestTrendingGifs();
   }
 
-  render() {
+  saveTerm = (input) => {
+    console.log("INPUT:", input)
+    this.props.actions.saveTerms(input)
+  }
 
+  render() {
 
     return (
       <div>
-        <SearchBar onTermChange={this.props.actions.requestGifs} />
+        <SearchBar terms={this.props.terms} handleKeyUp={this.saveTerm} onTermChange={this.props.actions.requestGifs} />
         <GifResults gifs={ this.props.gifs } />
       </div>
     );
@@ -24,8 +29,10 @@ class Home extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log("STATE:", state)
   return {
-    gifs: state.gifs.data
+    gifs: state.gifs.data,
+    terms: state.terms
   };
 }
 

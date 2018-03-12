@@ -4,9 +4,16 @@ export const REQUEST_GIFS = 'REQUEST_GIFS';
 export const REQUEST_RANDOM_GIF = 'REQUEST_RANDOM_GIF';
 export const REQUEST_GIF = 'REQUEST_GIF';
 export const REQUEST_TRENDING_GIFS = 'REQUEST_TRENDING_GIFS'
+export const SAVE_TERMS = 'SAVE_TERMS';
 
-export const PUSH = 'ROUTER/PUSH';
-export const LOCATION_CHANGE = 'ROUTER/LOCATION_CHANGE';
+
+export function saveTerms(term = null) {
+	console.log("SAVE TERMS:", term)
+	return {
+		type: SAVE_TERMS,
+		payload: term
+	}
+}
 
 
 export function requestGifs(term = null) {
