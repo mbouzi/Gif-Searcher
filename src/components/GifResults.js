@@ -7,16 +7,21 @@ const Div = styled.div`
 `
 
 const GifResults = (props) => {
-  console.log("PROPS:", props);
-  const gifs = props.gifs.map((gif) => {
-    return (<Div>
-	    		<GifCard 
-	    			key={gif.id} 
-	    			gif={gif} 
-	    		/>
-	    	</Div>
-    		)
-  });
+  let data = props.gifs && props.gifs.data ? props.gifs.data : [],
+      gifs = []
+
+  if(data) {
+    gifs = data.map((gif) => {
+      return (
+        <Div>
+  	    	<GifCard 
+  	    		key={gif.id} 
+  	    		gif={gif} 
+  	    	/>
+  	    </Div>
+      	)
+    });
+  }
 
   return (
     <ul>{gifs}</ul>

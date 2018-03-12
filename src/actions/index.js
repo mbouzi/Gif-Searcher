@@ -8,10 +8,9 @@ const API_KEY = '&api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 export function requestGifs(term = null) {
 
 	const data = axios.get(`${API_URL}${term}${API_KEY}`);
-	console.log("DATA:", data)
 
 	return {
 	    type: REQUEST_GIFS,
-	    term
+	    payload: data
 	}
 }
