@@ -4,15 +4,14 @@ import { Route } from 'react-router-dom';
 import { history } from './../store/configureStore';
 
 import Home from '../containers/Home';
-
+import NavBar from '../components/NavBar'
 
 export default class App extends React.Component {
     render() {
         return (
             <ConnectedRouter history={history}>
                 <div>
-                    <Header />
-
+                    <NavBar />
                     <div className="container">
                         <Route exact path="/" component={ Home }/>
                     </div>
