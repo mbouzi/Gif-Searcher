@@ -7,26 +7,44 @@ const Input = styled.input`
     -webkit-appearance: none;
     border-radius: 0;
     font-weight: 400;
-    width: 70%;
+    width: 100%;
     margin: 0;
     height: 52px;
     letter-spacing: 1px;
     font-size: 18px;
     outline: none;
     border: none;
-`
+`,
+    Results = styled.div `
+        background-color: #ffffffa1;
+    `,
+    List = styled.ul`
+        list-style-type: none;
+    `,
+    Term = styled.li`
+        text-align: left;
+        padding: 5px;
+    ;`
 
 class SearchBar extends React.Component {
-   
+
+    constructor(props){
+        super(props);
+        this.timeout =  0;
+      }
+    
     onChange = (input) => {
         this.props.onTermChange(input);
     }
 
     onKeyUp = (input) => {
+        if(this.timeout){ clearTimeout(this.timeout)}
         if(input && input.length > 2) {
-            setTimeout(() => this.props.handleKeyUp(input), 2000);
+            this.timeout = setTimeout(() => this.props.handleKeyUp(input), 1000);
         }
     }
+
+
 
     renderPreviousTerms = () => {
         const terms = this.props.terms.terms;
@@ -35,7 +53,7 @@ class SearchBar extends React.Component {
             return terms.map((term, index) => {
                 console.log("term:", term, index)
                 return (
-                    <li key={index}>{term}</li>
+                    <Term onClick={() => this.onChange(term)} key={index}>{term}</Term>
                 )
             })
         }
@@ -45,11 +63,11 @@ class SearchBar extends React.Component {
         return (
             <div className="search">
                 <Input placeholder="Search for gifs" onKeyUp={() => this.onKeyUp(event.target.value)}  onChange={() => this.onChange(event.target.value)} />
-                <div>
-                    <ul>
+                <Results>
+                    <List>
                         {this.renderPreviousTerms()}
-                    </ul>
-                </div>
+                    </List>
+                </Results>
             </div>
         );
     }
