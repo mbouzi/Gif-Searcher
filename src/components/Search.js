@@ -64,14 +64,22 @@ class Search extends React.Component {
         }
     }
 
+    renderTermList = () => {
+        if(this.props.term) {
+            return (
+                <List>
+                    {this.renderPreviousTerms()}
+                </List>
+            )
+        }
+    }
+
     render() {
         return (
             <div >
                 <Input value={this.props.term} placeholder="Search for gifs" onKeyUp={() => this.onKeyUp(event.target.value)}  onChange={() => this.onChange(event.target.value)} />
                 <Results>
-                    <List>
-                        {this.renderPreviousTerms()}
-                    </List>
+                {this.renderTermList()}
                 </Results>
             </div>
         );

@@ -1,6 +1,6 @@
 # Gif Search
 
-App that uses the Giphy API to search for Gifs.
+App that uses the Giphy API to search for related Gifs.
 
 Built with:
 
@@ -13,7 +13,7 @@ Built with:
 
 ## Getting started:
 
-* Clone or download this repository.
-* run `yarn install` and `yarn start`
+* clone or download this repository.
+* run `yarn install`, then `yarn start`
 
 

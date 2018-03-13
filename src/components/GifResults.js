@@ -43,7 +43,7 @@ const GifResults = (props) => {
     }
 
     return (
-          <ul>{gifs}</ul>
+          <ul style={{padding: '0'}}>{gifs}</ul>
     );
 };
 
