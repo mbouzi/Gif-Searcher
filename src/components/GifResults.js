@@ -30,7 +30,6 @@ const GifResults = (props) => {
                 display: inline;
             `
             return (
-              <Grid.Column>
                 <ImageContainer>
     	    	        <GifCard 
     	    		          key={gif.id} 
@@ -38,17 +37,12 @@ const GifResults = (props) => {
                         color={colors[Math.floor(Math.random() * colors.length)]}
     	    	        />
     	          </ImageContainer>
-                </Grid.Column>
         	  )
         });
     }
 
     return (
-        <Grid columns={4}>
-            <Grid.Row>
-            <ul>{gifs}</ul>
-            </Grid.Row>
-        </Grid>
+          <ul>{gifs}</ul>
     );
 };
 
