@@ -14,6 +14,6 @@ Built with:
 ## Getting started:
 
 * clone or download this repository.
-* run `yarn install`, then `yarn start`
+* run `npm install`, then `npm start`
 
 
