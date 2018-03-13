@@ -1,4 +1,4 @@
-# Gif Search
+# Gif Searcher
 
 App that uses the Giphy API to search for related Gifs.
 
@@ -6,8 +6,8 @@ Built with:
 
 * React
 * Redux
-* React Router
 * Webpack
+* react-router
 * styled-components - Styling module
 * Semantic UI - Theming framework
 
