@@ -8,7 +8,7 @@ class NavBar extends React.Component {
         return (
             <Segment>
                 <Header textAlign='center'>
-                    <Link to='/'><img src="../images/giphy-logo.png" /></Link>
+                    <Link to='/'><img src="../assets/images/giphy-logo.png" /></Link>
                 </Header>
             </Segment>
         );

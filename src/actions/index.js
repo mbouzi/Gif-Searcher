@@ -6,6 +6,7 @@ const API_URL = 'http://api.giphy.com/v1/gifs';
 const API_KEY = 'api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
 export function storeTerms(term = null) {
+
 	return {
 		type: STORE_TERMS,
 		payload: term
@@ -23,7 +24,7 @@ export function displayTerm(term = null) {
 
 export function requestGifs(term = null) {
 
-	const data = axios.get(`${API_URL}/search?q=${term}&${API_KEY}`);
+	const data = axios.get(`${API_URL}/search?q=${term.replace(/\s/g, '+')}&${API_KEY}`);
 
 	return {
 	    type: REQUEST_GIFS,

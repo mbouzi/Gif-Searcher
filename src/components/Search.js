@@ -27,9 +27,10 @@ const Input = styled.input`
     Term = styled.li`
         text-align: left;
         padding: 10px;
-        &hover: {
-            background-color: #fff;
+        ${List}:hover & {
+            background: #fff;
         }
+        cursor: pointer;
     ;`
 
 class Search extends React.Component {
