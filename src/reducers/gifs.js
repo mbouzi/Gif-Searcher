@@ -1,4 +1,4 @@
-import { REQUEST_GIFS,REQUEST_RANDOM_GIF, REQUEST_GIF, REQUEST_TRENDING_GIFS } from '../actions';
+import { REQUEST_GIFS,REQUEST_RANDOM_GIF, REQUEST_GIF, REQUEST_TRENDING_GIFS } from '../actions/types';
 
 
 const initialState =  {
@@ -6,7 +6,6 @@ const initialState =  {
 };
 
 export default function gifs(state = initialState, action) {
-  console.log("ACTION:", action)
     switch (action.type) {
         case REQUEST_GIFS:
         case REQUEST_TRENDING_GIFS:
