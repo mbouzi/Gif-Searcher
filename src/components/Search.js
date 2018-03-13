@@ -7,26 +7,32 @@ const Input = styled.input`
     -webkit-appearance: none;
     border-radius: 0;
     font-weight: 400;
-    width: 100%;
-    margin: 0;
+    margin: 0 auto;
     height: 52px;
     letter-spacing: 1px;
     font-size: 18px;
     outline: none;
     border: none;
+    width: 100%;
+    margin: 0 auto;
 `,
     Results = styled.div `
         background-color: #ffffffa1;
     `,
     List = styled.ul`
         list-style-type: none;
+        padding: 0;
+        margin: 0;
     `,
     Term = styled.li`
         text-align: left;
-        padding: 5px;
+        padding: 10px;
+        &hover: {
+            background-color: #fff;
+        }
     ;`
 
-class SearchBar extends React.Component {
+class Search extends React.Component {
 
     constructor(props){
         super(props);
@@ -70,4 +76,4 @@ class SearchBar extends React.Component {
     }
 }
 
-export default SearchBar;
+export default Search;

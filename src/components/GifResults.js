@@ -2,51 +2,53 @@ import React from 'react';
 import GifCard from './GifCard';
 import styled from 'styled-components';
 
+import { Grid } from 'semantic-ui-react'
 
-const ImageContainer = styled.div`
-    display: inline;
 
-`
-
-    // box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 ${colors[Math.floor(Math.random() * colors.length)]}, 0 1px 3px 0 #d4d4d5;
 
 const GifResults = (props) => {
     let data = props.gifs && props.gifs.data ? props.gifs.data : [],
-        gifs = [];
-        // colors = [
-        //     "red",
-        //     "orange",
-        //     "yellow",
-        //     "olive",
-        //     "green",
-        //     "teal",
-        //     "blue",
-        //     "violet",
-        //     "purple",
-        //     "pink",
-        // ]
+        gifs = [],
+        colors = [
+            "red",
+            "orange",
+            "yellow",
+            "olive",
+            "green",
+            "teal",
+            "blue",
+            "violet",
+            "purple",
+            "pink",
+        ]
+        ;
     
 
     if(data) {
         gifs = data.map((gif) => {
-            // const ImageContainer = styled.div`
-            //     display: inline;
-            //     box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 ${colors[Math.floor(Math.random() * colors.length)]}, 0 1px 3px 0 #d4d4d5;
-
-            // `
+            let ImageContainer = styled.div`
+                display: inline;
+            `
             return (
+              <Grid.Column>
                 <ImageContainer>
     	    	        <GifCard 
     	    		          key={gif.id} 
     	    		          gif={gif}
+                        color={colors[Math.floor(Math.random() * colors.length)]}
     	    	        />
     	          </ImageContainer>
+                </Grid.Column>
         	  )
         });
     }
 
     return (
-        <ul>{gifs}</ul>
+        <Grid columns={4}>
+            <Grid.Row>
+            <ul>{gifs}</ul>
+            </Grid.Row>
+        </Grid>
     );
 };
 

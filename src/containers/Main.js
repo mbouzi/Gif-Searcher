@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
-import SearchBar from '../components/SearchBar';
+import Search from '../components/Search';
 import GifResults from '../components/GifResults'
 
 class Main extends React.Component {
@@ -25,7 +25,7 @@ class Main extends React.Component {
 
       return (
             <div>
-                <SearchBar term={this.props.term} terms={this.props.terms} handleKeyUp={this.saveTerm} onTermChange={this.onTermChange} />
+                <Search term={this.props.term} terms={this.props.terms} handleKeyUp={this.saveTerm} onTermChange={this.onTermChange} />
                 <GifResults gifs={ this.props.gifs } />
             </div>
         );
