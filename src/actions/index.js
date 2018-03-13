@@ -2,7 +2,7 @@ import axios from 'axios'
 import { STORE_TERMS, DISPLAY_TERM, REQUEST_GIFS,REQUEST_RANDOM_GIF, REQUEST_GIF, REQUEST_TRENDING_GIFS } from './types';
 
 
-const API_URL = 'http://api.giphy.com/v1/gifs/';
+const API_URL = 'http://api.giphy.com/v1/gifs';
 const API_KEY = 'api_key=RiGduUrtLWz4x36dI6ARDS8RkOZA7nDv';
 
 export function storeTerms(term = null) {
@@ -23,7 +23,7 @@ export function displayTerm(term = null) {
 
 export function requestGifs(term = null) {
 
-	const data = axios.get(`${API_URL}?q=${term}&${API_KEY}`);
+	const data = axios.get(`${API_URL}/search?q=${term}&${API_KEY}`);
 
 	return {
 	    type: REQUEST_GIFS,
@@ -33,7 +33,7 @@ export function requestGifs(term = null) {
 
 export function requestTrendingGifs() {
 
-	const data = axios.get(`${API_URL}trending?${API_KEY}`);
+	const data = axios.get(`${API_URL}/trending?${API_KEY}`);
 
 	return {
 	    type: REQUEST_TRENDING_GIFS,

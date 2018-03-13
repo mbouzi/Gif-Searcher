@@ -5,7 +5,7 @@ Simple app that uses the Giphy API to search for Gifs.
 ## Getting started:
 
 * Clone or download this repository.
-* run `npm install` and `npm start`
+* run `yarn install` and `yarn start`
 
 
 <!-- ## Technologies

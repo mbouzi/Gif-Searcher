@@ -53,6 +53,7 @@ class Search extends React.Component {
 
     renderPreviousTerms = () => {
         const terms = this.props.terms.terms;
+
         if(terms && terms.length > 0) {
             return terms.map((term, index) => {
                 return (
