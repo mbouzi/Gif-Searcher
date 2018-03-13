@@ -24,8 +24,6 @@ class App extends React.Component {
                     <NavBar />
                     <Container>
                         <Route exact path="/" component={ Main }/>
-                         <Route exact path="/random" component={ GifContainer }/>
-                        <Route exact path="/gif/:gifId" component={GifContainer} />
                     </Container>
                 </div>
             </ConnectedRouter>

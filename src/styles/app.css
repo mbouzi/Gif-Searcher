@@ -1,0 +1,19 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type=text] {
+    border: none;
+    font-weight: 700;
+    font-style: italic;
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+    height: 50px;
+    border-bottom: 1px solid #fff;
+    text-indent: 4px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 57px;
+    line-height: 52px;
+}
