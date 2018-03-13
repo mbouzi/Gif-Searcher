@@ -9,7 +9,7 @@ Built with:
 * React Router
 * Webpack
 * styled-components - Styling module
-* Semantic UI - Theming framework.
+* Semantic UI - Theming framework
 
 ## Getting started:
 
