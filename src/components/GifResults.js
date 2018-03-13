@@ -9,6 +9,7 @@ import { Grid } from 'semantic-ui-react'
 const GifResults = (props) => {
     let data = props.gifs && props.gifs.data ? props.gifs.data : [],
         gifs = [],
+        // for gif border color
         colors = [
             "red",
             "orange",

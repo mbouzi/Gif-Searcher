@@ -1,6 +1,15 @@
 # Gif Search
 
-Simple app that uses the Giphy API to search for Gifs.
+App that uses the Giphy API to search for Gifs.
+
+Built with:
+
+* React
+* Redux
+* React Router
+* Webpack
+* styled-components - Styling module
+* Semantic UI - Theming framework.
 
 ## Getting started:
 
@@ -8,11 +17,3 @@ Simple app that uses the Giphy API to search for Gifs.
 * run `yarn install` and `yarn start`
 
 
-<!-- ## Technologies
-
-This app was built with: -->
-
-<!-- * React - Using the create-react-app module.
-* Snoowrap - A Reddit API wrapper.
-* React Router - For routing to comments page.
-* Jest + Enzyme - For component testing. -->
