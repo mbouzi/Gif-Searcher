@@ -45,15 +45,15 @@ class Search extends React.Component {
     }
 
     onKeyUp = (input) => {
-        if(this.timeout){ clearTimeout(this.timeout)}
-        if(input && input.length > 2) {
+        if(this.timeout){ clearTimeout(this.timeout)} 
+        if(input && input.length > 2) { // store input term 1 second after done typing
             this.timeout = setTimeout(() => this.props.handleKeyUp(input), 1000);
         }
     }
 
 
     renderPreviousTerms = () => {
-        const terms = this.props.terms.terms;
+        const terms = this.props.terms.terms; // previous input terms
 
         if(terms && terms.length > 0) {
             return terms.map((term, index) => {

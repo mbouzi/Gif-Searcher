@@ -16,9 +16,9 @@ class Main extends React.Component {
       this.props.actions.storeTerms(input)
   }
 
-  onTermChange = (input) => {
+  onTermChange = (term) => {
       this.props.actions.requestGifs(input)
-      this.props.actions.displayTerm(input)
+      this.props.actions.displayTerm(input) // display chosen term
   }
 
   render() {
