@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
 import Search from '../components/Search';
 import GifResults from '../components/GifResults'
 
-class Main extends React.Component {
-
+class Main extends Component {
 
   componentWillMount() {
       this.props.actions.requestTrendingGifs();

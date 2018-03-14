@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -33,12 +33,21 @@ const Input = styled.input`
         cursor: pointer;
     ;`
 
-class Search extends React.Component {
+class Search extends Component {
 
     constructor(props){
         super(props);
         this.timeout =  0;
-      }
+    }
+
+    static propTypes = {
+        terms: PropTypes.object,
+        handleKeyUp: PropTypes.func
+    }
+
+    static defaultProps =  {
+        handleKeyUp: () => console.log("handleKeyUp")
+    }
     
     onChange = (input) => {
         this.props.onTermChange(input);
