@@ -40,10 +40,6 @@ class Search extends Component {
         this.timeout =  0;
     }
 
-    static propTypes = {
-        terms: PropTypes.object,
-        handleKeyUp: PropTypes.func
-    }
 
     static defaultProps =  {
         handleKeyUp: () => console.log("handleKeyUp")
